@@ -49,10 +49,10 @@ class TestingSolution(unittest.TestCase):
 
     def test_solution_efficiency(self):
         for test_case in self._efficiency_test_cases:
-            start_test = dt.now()
             # print(f"N = {test_case[0]}")
             # print(f"Size A = {len(test_case[1])}")
+            start_test = dt.now()
             solution(test_case[0], test_case[1])
-            execution_time = (dt.now() - start_test).total_seconds()
+            execution_time_s = (dt.now() - start_test).total_seconds()
             # print(f"Execution time = {execution_time}") 
-            self.assertLess((dt.now() - start_test).total_seconds(), 0.464)
+            self.assertLess(execution_time_s, 0.464)
